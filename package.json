@@ -11,13 +11,14 @@
   "scripts": {
     "compile": "hardhat compile",
     "test": "hardhat test",
+    "test:dependencies": "node scripts/check-security-dependencies.js",
     "coverage": "hardhat coverage",
     "prettier": "prettier --write test/**/*.js && prettier --write deploy/*.js && prettier --write tasks/*.js && prettier --write contracts/**/*.sol && prettier --write contracts/**/**/*.sol && prettier --write contracts/**/**/**/*.sol",
     "lint": "yarn prettier && solhint 'contracts/*.sol' && solhint 'contracts/**/*.sol' && solhint 'contracts/**/**/*.sol' && solhint 'contracts/**/**/**/*.sol'"
   },
   "dependencies": {
     "@layerzerolabs/solidity-examples": "0.0.6",
-    "@openzeppelin/contracts": "^4.4.1",
+    "@openzeppelin/contracts": "4.9.6",
     "@uniswap/v2-periphery": "1.1.0-beta.0",
     "@uniswap/v3-core": "^1.0.1",
     "@uniswap/v3-periphery": "^1.4.3"
@@ -45,5 +46,9 @@
     "solhint": "^3.3.6",
     "solidity-coverage": "^0.8.2",
     "typescript": "^3.7.0"
+  },
+  "resolutions": {
+    "@layerzerolabs/solidity-examples/@openzeppelin/contracts": "4.9.6",
+    "@openzeppelin/contracts-upgradeable": "4.9.6"
   }
 }
